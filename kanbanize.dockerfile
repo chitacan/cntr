@@ -7,7 +7,6 @@ ENV HOST https://chainpartners.kanbanize.com
 WORKDIR /root
 COPY mitmproxy-ca-cert.pem mitmproxy-ca-cert.pem
 
-RUN echo $API_KEY
 CMD mitmweb -p $PORT \
       --mode reverse:$HOST \
       --setheader ":~q:apikey:$API_KEY" \
