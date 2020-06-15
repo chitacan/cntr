@@ -6,4 +6,4 @@ ENV TOKEN $TOKEN
 
 EXPOSE 4040
 
-CMD ngrok tcp --authtoken $TOKEN --region jp host.docker.internal:22
+CMD ngrok tcp --authtoken $TOKEN --region jp --remote-addr $REMOTE_ADDR host.docker.internal:22
