@@ -23,7 +23,7 @@ ngrok ssh
 
 ```sh
 $ docker build --build-arg TOKEN=<NGROK_AUTH_TOKEN> -t gcr.io/<PROJECT_ID>/ngrok-ssh:<TAG> -f ssh.dockerfile .
-$ docker run --restart=always -m 100m -d -p 4040:4040 gcr.io/<PROJECT_ID>/ngrok-ssh<TAG>
+$ docker run --restart=always -m 100m -d -p 4040:4040 --env REMOTE_ADDR=<ADDR> gcr.io/<PROJECT_ID>/ngrok-ssh<TAG>
 ```
 
 ## Why?
