@@ -44,6 +44,6 @@ IntelliJ 의 [Tasks and context](https://www.jetbrains.com/help/idea/managing-ta
 
 ![](https://user-images.githubusercontent.com/286950/87880591-cd9a4500-ca2d-11ea-8bc2-6e6381417a0b.gif)
 
-NAT 내에 존재하는 Remote Machine 에 [Visual Studio Code Remote - SSH](https://code.visualstudio.com/docs/remote/ssh) 로 접근할 수 있는 컨테이너를 생성합니다. 컨테이너 안에서 실행되는 [ngrok](https://github.com/inconshreveable/ngrok) 프로세스는 `host.docker.internal` 도메인을 통해 호스트 머신의 `22` 번 포트를 오픈합니다.  인터넷만 가능하면 어디서든 컨테이너가 실행된 Remote Machine 의 프로젝트를 Visual Studio Code 로 작업할 수 있습니다.
+NAT 내에 존재하는 Remote Machine 에 [Visual Studio Code Remote - SSH](https://code.visualstudio.com/docs/remote/ssh) 로 접근할 수 있는 컨테이너를 생성합니다. 컨테이너에서 실행되는 [ngrok](https://github.com/inconshreveable/ngrok) 프로세스는 `host.docker.internal` 도메인을 통해 호스트 머신의 `22` 번 포트를 ngrok reserved TCP address 에 오픈합니다.  인터넷만 가능하면 어디서든 컨테이너가 실행된 Remote Machine 의 프로젝트를 Visual Studio Code 로 작업할 수 있습니다.
 
 > ngrok reserved TCP address 를 사용하기 위해서는 [ngrok Pro](https://ngrok.com/pricing) 가 필요합니다.
