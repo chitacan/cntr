@@ -1,2 +1,4 @@
 .DS_Store
 *.pem
+.env
+__pycache__
