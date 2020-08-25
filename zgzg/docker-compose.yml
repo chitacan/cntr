@@ -6,11 +6,13 @@ services:
       context: ./ngrok
       args:
         TOKEN: "${TOKEN}"
+    env_file: .env
     depends_on:
       - mitmproxy
     environment:
       HOST_NAME: "${HOST_NAME}"
   mitmproxy:
     build: ./mitmproxy
+    env_file: .env
     environment:
       TARGET_PORT: "${TARGET_PORT}"

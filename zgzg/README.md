@@ -11,8 +11,8 @@ TOKEN=
 ## run
 
 ```
-$ docker-compose --env-file .env build
-$ docker-compose --env-file .env up -d
+$ docker-compose build
+$ docker-compose up -d
 ```
 
 ## development
