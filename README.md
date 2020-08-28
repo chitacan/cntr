@@ -32,7 +32,7 @@ $ docker run --restart=always -m 100m -d -p 4040:4040 --env REMOTE_ADDR=<ADDR> g
 
 ![](https://user-images.githubusercontent.com/286950/70865916-09f05900-1fa6-11ea-9a0f-888baf05c588.png)
 
-cumberland Websocket API 서버에는 지정된 클라이언트 인증서 (SSL pinning) 를 가진 클라이언트만 접속할 수 있습니다. 응답에 CORS 헤더도 없어, 브라우져 환경에서 cumberland API 를 직접 사용하는 것은 불가능합니다. [mitmproxy](https://mitmproxy.org/) 는 지정된 인증서를 사용해 cumberland API 서버에 연결할 수 있습니다. 이 연결을 중계하는 포트를 통해 브라우져는 별도의 인증서 설정 없이 cumberland API 서버에 연결할 수 있습니다.
+cumberland Websocket API 서버에는 지정된 클라이언트 인증서 (SSL pinning) 를 가진 클라이언트만 접속할 수 있습니다. 응답에 CORS 헤더도 없어, 브라우져 환경에서 cumberland API 를 직접 사용하는 것은 불가능합니다. [mitmproxy](https://mitmproxy.org/) 의 인증서 옵션을 사용하면, 오리진(cumberland API) 요청때 원하는 인증서를 사용해 서버와 연결을 맺을 수 있습니다. 이 연결을 중계하는 포트를 통해 브라우져는 별도의 인증서 설정 없이 cumberland API 서버에 연결할 수 있습니다.
 
 ### [kanbanize.dockerfile](https://github.com/chitacan/cntr/blob/master/kanbanize.dockerfile)
 
