@@ -26,5 +26,5 @@ $ ngrok http 4444 --hostname <HOST_NAME> --region jp
 mitmproxy
 
 ```
-$  mitmproxy -p 4444 --mode reverse:http://127.0.0.1:<TARGET_PORT> -s mitmproxy/allow-x-origin.py
+$ mitmproxy -p 4444 --mode reverse:http://127.0.0.1:<TARGET_PORT> -s mitmproxy/allow-x-origin.py
 ```
