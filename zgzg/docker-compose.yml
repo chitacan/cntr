@@ -11,8 +11,18 @@ services:
       - mitmproxy
     environment:
       HOST_NAME: "${HOST_NAME}"
+    restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 100m
   mitmproxy:
     build: ./mitmproxy
     env_file: .env
     environment:
       TARGET_PORT: "${TARGET_PORT}"
+    restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 100m
