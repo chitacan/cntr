@@ -2,28 +2,34 @@
 
 개인적인 컨테이너들 ❤️
 
+## Setup
+
+```
+$ docker login ghcr.io
+```
+
 ## Build & Run
 
 mitm cumberland
 
 ```sh
 # create mitm-ca-cert.pem, cumberland.pem
-$ docker build -t gcr.io/<PROJECT_ID>/mitm-cumberland:<TAG> -f cumberland.dockerfile .
-$ docker run --restart=always -m 100m -d -p 8888:8888 [-p 8081] --name cbld gcr.io/<PROJECT_ID>/mitm-cumberland:<TAG>
+$ docker build -t ghcr.io/chtiacan/mitm-cumberland:<TAG> -f cumberland.dockerfile .
+$ docker run --restart=always -m 100m -d -p 8888:8888 [-p 8081] --name cbld ghcr.io/chitacan/mitm-cumberland:<TAG>
 ```
 
 mitm kanbanize
 
 ```sh
-$ docker build --build-arg API_KEY=<API_KEY> -t gcr.io/<PROJECT_ID>/mitm-kanbanize:<TAG> -f kanbanize.dockerfile .
-$ docker run --restart=always -m 100m -d -p 9999:9999 [-p 8081] --name knz gcr.io/<PROJECT_ID>/mitm-kanbanize:<TAG>
+$ docker build --build-arg API_KEY=<API_KEY> -t ghcr.io/chitacan/mitm-kanbanize:<TAG> -f kanbanize.dockerfile .
+$ docker run --restart=always -m 100m -d -p 9999:9999 [-p 8081] --name knz ghcr.io/chitacan/mitm-kanbanize:<TAG>
 ```
 
 ngrok ssh
 
 ```sh
-$ docker build --build-arg TOKEN=<NGROK_AUTH_TOKEN> -t gcr.io/<PROJECT_ID>/ngrok-ssh:<TAG> -f ssh.dockerfile .
-$ docker run --restart=always -m 100m -d -p 4040:4040 --name ngrok-ssh --env REMOTE_ADDR=<ADDR> gcr.io/<PROJECT_ID>/ngrok-ssh:<TAG>
+$ docker build --build-arg TOKEN=<NGROK_AUTH_TOKEN> -t ghcr.io/chitacan/ngrok-ssh:<TAG> -f ssh.dockerfile .
+$ docker run --restart=always -m 100m -d -p 4040:4040 --name ngrok-ssh --env REMOTE_ADDR=<ADDR> ghcr.io/chitacan/ngrok-ssh:<TAG>
 ```
 
 ## Why?
